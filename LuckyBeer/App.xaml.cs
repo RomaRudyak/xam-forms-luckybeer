@@ -3,6 +3,10 @@ using Xamarin.Forms;
 using Prism;
 using System;
 using Prism.Ioc;
+using Autofac;
+using System.Net.Http;
+using Refit;
+using System.Reflection;
 
 namespace LuckyBeer
 {
@@ -16,14 +20,28 @@ namespace LuckyBeer
             MainPage = new LuckyBeerPage();
         }
 
-        protected override void OnInitialized()
+        protected override async void OnInitialized()
         {
-
+            var t = await Container.Resolve<IBeerService>().Random();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            var autofacContainer = containerRegistry.GetBuilder();
 
+            autofacContainer
+                .Register(c =>
+                {
+                    var hadler = new BreweryAuthHandler(new HttpClientHandler(), "{API_KEY}");
+                    return new HttpClient()
+                    {
+                        BaseAddress = new Uri("http://api.brewerydb.com/v2/")
+                    };
+                })
+                .SingleInstance();
+
+            autofacContainer.Register(
+                c => RestService.For<IBeerService>(c.Resolve<HttpClient>()));
         }
     }
 }
