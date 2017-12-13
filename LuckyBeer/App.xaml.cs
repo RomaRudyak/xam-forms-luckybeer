@@ -1,29 +1,29 @@
-﻿using Xamarin.Forms;
+﻿using Prism.Autofac;
+using Xamarin.Forms;
+using Prism;
+using System;
+using Prism.Ioc;
 
 namespace LuckyBeer
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
+        public App(IPlatformInitializer initializer = null)
+            : base(initializer)
         {
             InitializeComponent();
 
             MainPage = new LuckyBeerPage();
         }
 
-        protected override void OnStart()
+        protected override void OnInitialized()
         {
-            // Handle when your app starts
+
         }
 
-        protected override void OnSleep()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Handle when your app sleeps
-        }
 
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
         }
     }
 }

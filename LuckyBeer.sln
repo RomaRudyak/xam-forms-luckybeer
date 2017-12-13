@@ -54,4 +54,17 @@ Global
 		{CF068D25-265F-49D9-A0BE-42CD4236B1D2}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{CF068D25-265F-49D9-A0BE-42CD4236B1D2}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.FileWidth = 80
+		$1.TabsToSpaces = True
+		$1.scope = application/xaml+xml
+		$0.XmlFormattingPolicy = $2
+		$2.DefaultFormat = $3
+		$3.AlignAttributes = True
+		$3.MaxAttributesPerLine = 2
+		$3.WrapAttributes = True
+		$2.scope = application/xaml+xml
+	EndGlobalSection
 EndGlobal
