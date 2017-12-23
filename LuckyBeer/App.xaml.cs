@@ -12,6 +12,8 @@ namespace LuckyBeer
 {
     public partial class App : PrismApplication
     {
+        private const string ApiKey = "{API_KEY}";
+
         public App(IPlatformInitializer initializer = null)
             : base(initializer)
         {
@@ -32,7 +34,7 @@ namespace LuckyBeer
             autofacContainer
                 .Register(c =>
                 {
-                    var hadler = new BreweryAuthHandler(new HttpClientHandler(), "{API_KEY}");
+                    var hadler = new BreweryAuthHandler(new HttpClientHandler(), ApiKey);
                     return new HttpClient()
                     {
                         BaseAddress = new Uri("http://api.brewerydb.com/v2/")
