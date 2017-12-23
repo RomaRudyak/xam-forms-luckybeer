@@ -19,5 +19,6 @@
     <Folder Include="Rest\" />
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="StateKit\" />
   </ItemGroup>
 </Project>
