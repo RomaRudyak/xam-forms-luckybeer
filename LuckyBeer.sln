@@ -60,11 +60,20 @@ Global
 		$1.FileWidth = 80
 		$1.TabsToSpaces = True
 		$1.scope = application/xaml+xml
+		$1.inheritsSet = null
 		$0.XmlFormattingPolicy = $2
 		$2.DefaultFormat = $3
 		$3.AlignAttributes = True
 		$3.MaxAttributesPerLine = 2
 		$3.WrapAttributes = True
 		$2.scope = application/xaml+xml
+		$0.DotNetNamingPolicy = $4
+		$4.ResourceNamePolicy = MSBuild
+		$0.TextStylePolicy = $5
+		$5.FileWidth = 80
+		$5.TabsToSpaces = True
+		$5.scope = application/xml
+		$0.XmlFormattingPolicy = $6
+		$6.scope = application/xml
 	EndGlobalSection
 EndGlobal

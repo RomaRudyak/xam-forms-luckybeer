@@ -8,6 +8,8 @@ using System.Net.Http;
 using Refit;
 using System.Reflection;
 
+using LuckyBeer.Views;
+
 namespace LuckyBeer
 {
     public partial class App : PrismApplication
@@ -18,24 +20,32 @@ namespace LuckyBeer
             : base(initializer)
         {
             InitializeComponent();
-
-            MainPage = new LuckyBeerPage();
         }
 
         protected override async void OnInitialized()
         {
-            var t = await Container.Resolve<IBeerService>().Random();
+            await NavigationService.NavigateAsync(nameof(LuckyBeerPage));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             var autofacContainer = containerRegistry.GetBuilder();
+            RegisterRest(autofacContainer);
+            RegistreVies(containerRegistry);
+        }
 
+        private void RegistreVies(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<LuckyBeerPage, LuckuBeerViewModel>(nameof(LuckyBeerPage));
+        }
+
+        private static void RegisterRest(ContainerBuilder autofacContainer)
+        {
             autofacContainer
                 .Register(c =>
                 {
                     var hadler = new BreweryAuthHandler(new HttpClientHandler(), ApiKey);
-                    return new HttpClient()
+                    return new HttpClient(hadler)
                     {
                         BaseAddress = new Uri("http://api.brewerydb.com/v2/")
                     };

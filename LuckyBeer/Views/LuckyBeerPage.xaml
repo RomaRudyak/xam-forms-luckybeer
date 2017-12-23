@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	 xmlns:local="clr-namespace:LuckyBeer"
+	 x:Class="LuckyBeer.Views.LuckyBeerPage">
+	<StackLayout 			
+		VerticalOptions="Center"
+		HorizontalOptions="Center">
+
+		<Button Text="Ger Rundom Bear" 
+			VerticalOptions="Center"
+			HorizontalOptions="Center"
+			Command="{Binding GetRundomCommand}"/>
+
+		<Label Text="{Binding CurrentBeer.Name}" 
+			VerticalOptions="Center"
+			HorizontalOptions="Center"/>
+	</StackLayout>
+</ContentPage>

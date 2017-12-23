@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace LuckyBeer
+namespace LuckyBeer.Views
 {
     public partial class LuckyBeerPage : ContentPage
     {
