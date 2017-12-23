@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using LuckyBeer.StateKit;
 using Xamarin.Forms;
 
-namespace LuckyBeer
+namespace LuckyBeer.StateKit
 {
     [ContentProperty("Conditions")]
     public class StateContainer : ContentView
