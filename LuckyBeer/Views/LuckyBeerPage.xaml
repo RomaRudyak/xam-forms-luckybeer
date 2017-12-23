@@ -2,18 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 	 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	 xmlns:local="clr-namespace:LuckyBeer"
+	 xmlns:statekit="clr-namespace:LuckyBeer.StateKit"
 	 x:Class="LuckyBeer.Views.LuckyBeerPage">
-	<StackLayout 			
-		VerticalOptions="Center"
-		HorizontalOptions="Center">
+	<statekit:StateContainer State="{Binding State}">
 
-		<Button Text="Ger Rundom Bear" 
-			VerticalOptions="Center"
-			HorizontalOptions="Center"
-			Command="{Binding GetRundomCommand}"/>
+	 	<statekit:StateCondition State="Default">
+			<Button Text="Ger Rundom Bear" 
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				Command="{Binding GetRundomCommand}"/>
+		</statekit:StateCondition>
 
-		<Label Text="{Binding CurrentBeer.Name}" 
-			VerticalOptions="Center"
-			HorizontalOptions="Center"/>
-	</StackLayout>
+	 	<statekit:StateCondition State="Details">
+			<Label Text="{Binding CurrentBeer.Name}" 
+				VerticalOptions="Center"
+				HorizontalOptions="Center"/>
+		</statekit:StateCondition>
+
+		<statekit:StateCondition State="Loading">
+			<ActivityIndicator IsRunning="True" 
+				VerticalOptions="Center"
+				HorizontalOptions="Center" />
+		</statekit:StateCondition>
+		
+	</statekit:StateContainer>
 </ContentPage>

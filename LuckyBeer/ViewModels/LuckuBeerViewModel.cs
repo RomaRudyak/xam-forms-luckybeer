@@ -8,9 +8,23 @@ namespace LuckyBeer
 {
     public class LuckuBeerViewModel : BindableBase
     {
-        public ICommand GetRundomCommand { get; }
-        Beer _currentBeer;
+        public enum ModelState
+        {
+            Default,
+            Loading,
+            Details
+        }
 
+        private ModelState _state;
+        public ModelState State
+        {
+            get => _state;
+            set => SetProperty(ref _state, value);
+        }
+
+        public ICommand GetRundomCommand { get; }
+
+        private Beer _currentBeer;
         public Beer CurrentBeer
         {
             get => _currentBeer;
@@ -26,8 +40,12 @@ namespace LuckyBeer
 
         private async Task GetRandom()
         {
+            State = ModelState.Loading;
+
             var response = await _service.Random();
             CurrentBeer = response.Data;
+
+            State = ModelState.Details;
         }
 
         private readonly IBeerService _service;
