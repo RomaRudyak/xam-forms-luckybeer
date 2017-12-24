@@ -5,6 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using LuckyBeer;
+using Lottie.Forms.iOS.Renderers;
 
 namespace LuckyBeer.iOS
 {
@@ -15,6 +16,7 @@ namespace LuckyBeer.iOS
         {
             SetTabBarStyle();
 
+            AnimationViewRenderer.Init();
             global::Xamarin.Forms.Forms.Init();
 
             LoadApplication(new App());

@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Lottie.Forms.Droid;
 
 namespace LuckyBeer.Droid
 {
@@ -19,6 +20,8 @@ namespace LuckyBeer.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+
+            AnimationViewRenderer.Init();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 

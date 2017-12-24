@@ -1,24 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Class1.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
-    <PackageReference Include="refit" Version="4.0.1" />
-    <PackageReference Include="Prism.Autofac.Forms" Version="7.0.0.336-pre" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove=".DS_Store" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Rest\" />
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="StateKit\" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<AssertTargetFallback>$(AssertTargetFallback);netstandart1.4;portable45-net45+win8+wpa81</AssertTargetFallback>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
+		<PackageReference Include="refit" Version="4.0.1" />
+		<PackageReference Include="Prism.Autofac.Forms" Version="7.0.0.336-pre" />
+		<PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.4.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove=".DS_Store" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Rest\" />
+		<Folder Include="Views\" />
+		<Folder Include="ViewModels\" />
+		<Folder Include="StateKit\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="Class1.cs" />
+	</ItemGroup>
 </Project>

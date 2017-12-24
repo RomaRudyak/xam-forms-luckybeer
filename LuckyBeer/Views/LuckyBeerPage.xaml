@@ -3,9 +3,17 @@
 	 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	 xmlns:local="clr-namespace:LuckyBeer"
 	 xmlns:statekit="clr-namespace:LuckyBeer.StateKit"
-	Title="Lucky Beer"
+	 xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+	 Title="Lucky Beer"
 	 x:Class="LuckyBeer.Views.LuckyBeerPage">
-	<ContentView>
+
+	 <ContentPage.ToolbarItems>
+		<ToolbarItem Icon="Refresh.png" 
+			Text="Refresh" 
+			Command="{Binding GetRundomCommand}"
+			/>
+	</ContentPage.ToolbarItems>
+	
 	<statekit:StateContainer State="{Binding State}">
 
 	 	<statekit:StateCondition State="Default">
@@ -22,11 +30,16 @@
 		</statekit:StateCondition>
 
 		<statekit:StateCondition State="Loading">
-			<ActivityIndicator IsRunning="True" 
-				VerticalOptions="Center"
-				HorizontalOptions="Center" />
+				<lottie:AnimationView 
+					Animation="search.json"
+					Speed="1"
+					BackgroundColor="Black"
+					IsPlaying="True"
+					Loop="True"
+					AutoPlay="True"
+					VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand" />
 		</statekit:StateCondition>
 		
 	</statekit:StateContainer>
-		</ContentView>
 </ContentPage>
