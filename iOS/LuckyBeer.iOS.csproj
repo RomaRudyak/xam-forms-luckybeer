@@ -137,9 +137,14 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\BottleCap.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\BottleCap.imageset\Icon-1024.png" />
+    <ImageAsset Include="Assets.xcassets\BottleCap.imageset\Icon-120.png" />
+    <ImageAsset Include="Assets.xcassets\BottleCap.imageset\iTunesArtwork.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\BottleCap.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

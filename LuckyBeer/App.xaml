@@ -5,7 +5,10 @@
 			x:Class="LuckyBeer.App">
 	
 	<prism:PrismApplication.Resources>
-		<!-- Application resource dictionary -->
+		<ResourceDictionary>
+
+			
+		</ResourceDictionary>
 	</prism:PrismApplication.Resources>
 	
 </prism:PrismApplication >

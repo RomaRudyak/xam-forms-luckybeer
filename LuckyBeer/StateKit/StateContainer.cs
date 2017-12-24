@@ -37,6 +37,7 @@ namespace LuckyBeer.StateKit
             get { return GetValue(StateProperty); }
             set { SetValue(StateProperty, value); }
         }
+
         private async Task ChooseStateProperty(object newValue)
         {
             if (Conditions == null && Conditions?.Count == 0)

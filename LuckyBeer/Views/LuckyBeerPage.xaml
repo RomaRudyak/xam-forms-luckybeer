@@ -3,7 +3,9 @@
 	 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	 xmlns:local="clr-namespace:LuckyBeer"
 	 xmlns:statekit="clr-namespace:LuckyBeer.StateKit"
+	Title="Lucky Beer"
 	 x:Class="LuckyBeer.Views.LuckyBeerPage">
+	<ContentView>
 	<statekit:StateContainer State="{Binding State}">
 
 	 	<statekit:StateCondition State="Default">
@@ -26,4 +28,5 @@
 		</statekit:StateCondition>
 		
 	</statekit:StateContainer>
+		</ContentView>
 </ContentPage>
