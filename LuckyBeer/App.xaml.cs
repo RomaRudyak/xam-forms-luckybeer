@@ -15,6 +15,8 @@ namespace LuckyBeer
     public partial class App : PrismApplication
     {
         private const string ApiKey = "{API_KEY}";
+        private const string ApiHost = "http://api.brewerydb.com/v2/";
+
 
         public App(IPlatformInitializer initializer = null)
             : base(initializer)
@@ -24,7 +26,7 @@ namespace LuckyBeer
 
         protected override async void OnInitialized()
         {
-            await NavigationService.NavigateAsync(nameof(LuckyBeerPage));
+            await NavigationService.NavigateAsync($"/Nav/{nameof(LuckyBeerPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -37,6 +39,7 @@ namespace LuckyBeer
         private void RegistreVies(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<LuckyBeerPage, LuckuBeerViewModel>(nameof(LuckyBeerPage));
+            containerRegistry.RegisterForNavigation<NavigationPage>("Nav");
         }
 
         private static void RegisterRest(ContainerBuilder autofacContainer)
@@ -47,7 +50,7 @@ namespace LuckyBeer
                     var hadler = new BreweryAuthHandler(new HttpClientHandler(), ApiKey);
                     return new HttpClient(hadler)
                     {
-                        BaseAddress = new Uri("http://api.brewerydb.com/v2/")
+                        BaseAddress = new Uri(ApiHost)
                     };
                 })
                 .SingleInstance();
