@@ -24,6 +24,8 @@ namespace LuckyBeer.iOS
             return base.FinishedLaunching(app, options);
         }
 
+
+
         private static void SetTabBarStyle()
         {
             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;

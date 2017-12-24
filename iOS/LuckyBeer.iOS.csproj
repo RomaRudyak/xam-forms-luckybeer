@@ -154,6 +154,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Assets.xcassets\BottleCap.imageset\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

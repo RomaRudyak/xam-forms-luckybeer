@@ -5,35 +5,36 @@
 	 xmlns:statekit="clr-namespace:LuckyBeer.StateKit"
 	 xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
 	 Title="Lucky Beer"
+	 BackgroundColor="Black"
 	 x:Class="LuckyBeer.Views.LuckyBeerPage">
-
-	 <ContentPage.ToolbarItems>
-		<ToolbarItem Icon="Refresh.png" 
-			Text="Refresh" 
-			Command="{Binding GetRundomCommand}"
-			/>
-	</ContentPage.ToolbarItems>
 	
 	<statekit:StateContainer State="{Binding State}">
 
 	 	<statekit:StateCondition State="Default">
-			<Button Text="Ger Rundom Bear" 
+			<Button Text="I'am feeling lucky" 
 				VerticalOptions="Center"
 				HorizontalOptions="Center"
+				TextColor="White"
 				Command="{Binding GetRundomCommand}"/>
 		</statekit:StateCondition>
 
 	 	<statekit:StateCondition State="Details">
 			<Label Text="{Binding CurrentBeer.Name}" 
+				TextColor="White"
+				FontSize="Large"
 				VerticalOptions="Center"
-				HorizontalOptions="Center"/>
+				HorizontalOptions="Center">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GetRundomCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+
 		</statekit:StateCondition>
 
 		<statekit:StateCondition State="Loading">
 				<lottie:AnimationView 
 					Animation="search.json"
 					Speed="1"
-					BackgroundColor="Black"
 					IsPlaying="True"
 					Loop="True"
 					AutoPlay="True"
