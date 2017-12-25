@@ -11,10 +11,24 @@
 	<statekit:StateContainer State="{Binding State}">
 
 	 	<statekit:StateCondition State="Default">
-			<Button Text="I'am feeling lucky" 
+			<StackLayout
+				Orientation="Horizontal"
 				VerticalOptions="Center"
-				HorizontalOptions="Center"
-				Command="{Binding GetRundomCommand}"/>
+				HorizontalOptions="Center">
+
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GetRundomCommand}" />
+				</StackLayout.GestureRecognizers>
+
+				<Image 
+					HeightRequest="50"
+					Aspect="AspectFit"
+					Source="hop.png"/>
+				<Label 
+					FontSize="Large"
+					VerticalTextAlignment="Center"
+					Text="I am feeling lucky" />
+			</StackLayout>
 		</statekit:StateCondition>
 
 		<statekit:StateCondition State="PoweredBy">
