@@ -191,6 +191,7 @@
     <BundleResource Include="Resources\search.json" />
     <BundleResource Include="Resources\powered_by.png" />
     <BundleResource Include="Resources\hop.png" />
+    <BundleResource Include="Resources\beer_cover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />

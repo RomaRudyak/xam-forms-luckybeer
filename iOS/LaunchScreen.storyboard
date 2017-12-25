@@ -22,28 +22,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hop.png" translatesAutoresizingMaskIntoConstraints="NO" id="616">
-                                <rect key="frame" x="58.5" y="152.5" width="203" height="175"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer_cover.png" translatesAutoresizingMaskIntoConstraints="NO" id="1041">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered_by.png" translatesAutoresizingMaskIntoConstraints="NO" id="1042">
+                                <rect key="frame" x="63.5" y="422" width="193" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="616" secondAttribute="height" multiplier="147:127" id="833"/>
+                                    <constraint firstAttribute="height" constant="58" id="LbG-0P-XyV"/>
+                                    <constraint firstAttribute="width" secondItem="1042" secondAttribute="height" multiplier="193:58" id="UbC-Sb-Tnu"/>
+                                    <constraint firstAttribute="width" constant="193" id="VAn-Vh-zbV"/>
+                                    <constraint firstAttribute="width" secondItem="1042" secondAttribute="height" multiplier="193:58" id="d2r-HE-oPL"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="616" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="826"/>
-                            <constraint firstItem="616" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="827"/>
-                            <constraint firstItem="616" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1Ip-W1-Qqd"/>
-                            <constraint firstItem="616" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yhW-g4-kPd"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1042" secondAttribute="bottom" id="Avg-OE-fUN"/>
+                            <constraint firstItem="1041" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="SRd-y0-Z7W"/>
+                            <constraint firstItem="1041" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="eJV-oF-KJH"/>
+                            <constraint firstAttribute="bottom" secondItem="1041" secondAttribute="bottom" id="hHr-Ts-uYj"/>
+                            <constraint firstAttribute="trailing" secondItem="1041" secondAttribute="trailing" id="kjU-Hk-ISW"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="1042" secondAttribute="bottom" id="swr-V3-RoJ"/>
+                            <constraint firstItem="1042" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zWJ-hS-FsV"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="hop.png" width="175" height="175"/>
+        <image name="beer_cover.png" width="881" height="1308"/>
+        <image name="powered_by.png" width="1510" height="381"/>
     </resources>
 </document>
