@@ -14,13 +14,19 @@
 			<Button Text="I'am feeling lucky" 
 				VerticalOptions="Center"
 				HorizontalOptions="Center"
-				TextColor="White"
 				Command="{Binding GetRundomCommand}"/>
+		</statekit:StateCondition>
+
+		<statekit:StateCondition State="PoweredBy">
+			<Image Source="powered_by.png" 
+				VerticalOptions="FillAndExpand"
+				HorizontalOptions="FillAndExpand"
+				Aspect="AspectFit"
+				/>
 		</statekit:StateCondition>
 
 	 	<statekit:StateCondition State="Details">
 			<Label Text="{Binding CurrentBeer.Name}" 
-				TextColor="White"
 				FontSize="Large"
 				VerticalOptions="Center"
 				HorizontalOptions="Center">

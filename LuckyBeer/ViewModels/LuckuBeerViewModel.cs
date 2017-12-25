@@ -12,7 +12,8 @@ namespace LuckyBeer
         {
             Default,
             Loading,
-            Details
+            Details,
+            PoweredBy
         }
 
         private ModelState _state;
@@ -20,6 +21,13 @@ namespace LuckyBeer
         {
             get => _state;
             set => SetProperty(ref _state, value);
+        }
+
+        public async Task OnAppearing()
+        {
+            State = ModelState.PoweredBy;
+            await Task.Delay(2000);
+            State = ModelState.Default;
         }
 
         public ICommand GetRundomCommand { get; }

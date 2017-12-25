@@ -7,6 +7,17 @@
 	<prism:PrismApplication.Resources>
 		<ResourceDictionary>
 
+			<Style TargetType="ContentPage">
+				<Setter Property="BackgroundColor" Value="Black" />
+			</Style>
+
+			<Style TargetType="Label">
+				<Setter Property="TextColor" Value="White" />
+			</Style>
+
+			<Style TargetType="Button">
+				<Setter Property="TextColor" Value="White" />
+			</Style>
 			
 		</ResourceDictionary>
 	</prism:PrismApplication.Resources>
